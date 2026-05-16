@@ -1,0 +1,94 @@
+{
+  "target_event": {
+    "url": "https://shows.cityline.com/sc/2026/lisasmilegos.html",
+    "urls": [
+      "https://shows.cityline.com/sc/2026/lisasmilegos.html"
+    ],
+    "product_strategy": {
+      "mode": "current_url",
+      "title_keywords": [
+        { "keywords": ["lisa", "smile"], "weight": 100 }
+      ],
+      "date_keywords": ["2026"],
+      "avoid_keywords": ["取消", "Cancelled", "售罄", "Sold Out"],
+      "click_best_match": false,
+      "fallback_to_current_url": true
+    },
+    "session_strategy": {
+      "mode": "weighted",
+      "preferred": [],
+      "preferred_dates": [],
+      "preferred_times": [],
+      "avoid_dates": [],
+      "fallback": "first_available",
+      "allow_any_session_if_preferred_unavailable": true
+    },
+    "sale_state_strategy": {
+      "detect_states": true,
+      "click_when": ["前往購票", "前往购票", "立即購買", "立即购买", "Buy Tickets", "Purchase"],
+      "wait_when": ["即將發售", "即将发售", "Coming Soon", "稍後開售"],
+      "stop_when": ["售罄", "Sold Out", "取消", "Cancelled"],
+      "refresh_when": ["繁忙", "Busy", "系統忙碌", "系统忙碌"],
+      "poll_until_on_sale": false,
+      "pre_start_poll_interval": 1.5,
+      "on_start_poll_interval": 0.3,
+      "max_poll_seconds": 120
+    },
+    "discovery_mode": {
+      "enabled": true,
+      "save_product_candidates": true,
+      "save_session_candidates": true,
+      "options_file": "latest_discovery.json"
+    }
+  },
+  "ticket_preferences": {
+    "quantity": 3,
+    "preferred_zones": ["C/$348"]
+  },
+  "purchase_settings": {
+    "auto_purchase": true,
+    "auto_submit_order": true,
+    "max_wait_time": 300
+  },
+  "browser_config": {
+    "headless": false,
+    "page_timeout": 30,
+    "stealth_mode": true,
+    "window_size": [1920, 1080],
+    "user_data_dir": "artifacts/chrome-profile",
+    "use_subprocess": false,
+    "disable_images_in_fast_mode": false,
+    "disable_background_networking": false,
+    "disable_extensions_in_fast_mode": false,
+    "accept_language": "zh-HK,zh-TW,zh-CN,en-US,en",
+    "user_agent": ""
+  },
+  "runtime": {
+    "diagnostics": true,
+    "save_screenshots": true,
+    "non_interactive": false,
+    "verbose": false,
+    "verbose_login_status": false,
+    "speed_mode": "fast"
+  },
+  "cloudflare": {
+    "manual_wait_seconds": 300,
+    "check_interval": 1.5,
+    "keep_browser_open_on_failure": true,
+    "safe_mode": true,
+    "detection_settle_seconds": 0.5
+  },
+  "performance_tuning": {
+    "enabled": true,
+    "fast_poll_interval": 0.15,
+    "normal_poll_interval": 0.35,
+    "slow_poll_interval": 1.0,
+    "button_search_timeout": 6,
+    "post_click_wait": 0.25,
+    "page_ready_strategy": "eager",
+    "skip_noncritical_diagnostics_in_fast_mode": true
+  },
+  "notifications": {
+    "success_message": "🎉 购票成功！门票已预订"
+  }
+}
